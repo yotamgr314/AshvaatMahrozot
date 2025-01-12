@@ -4,8 +4,12 @@
 // Function to compare two strings
 int my_strcmp(char *source_str, char *compare_str)
 {
-    while (*source_str && *compare_str && *source_str == *compare_str)
+    while (*source_str != '\0' && *compare_str != '\0')
     {
+        if (*source_str != *compare_str)
+        {
+            return *source_str - *compare_str;
+        }
         source_str++;
         compare_str++;
     }
